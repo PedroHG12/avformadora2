@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Página 1 - Busca CEP
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-input [(ngModel)]="cep" placeholder="Digite o CEP"></ion-input>
+  <ion-button (click)="buscarCEP()">Buscar CEP</ion-button>
+  
+  <div *ngIf="resultado">
+    <p>CEP: {{ resultado.cep }}</p>
+    <p>Logradouro: {{ resultado.logradouro }}</p>
+    <p>Bairro: {{ resultado.bairro }}</p>
+    <p>Cidade: {{ resultado.localidade }}</p>
+    <p>Estado: {{ resultado.uf }}</p>
+  </div>
+  
+  <ion-button [routerLink]="['/home']">Ir para Home</ion-button>
+  <ion-button [routerLink]="['/page2']">Ir para Página 2</ion-button>
+</ion-content>
